@@ -1,0 +1,9 @@
+{
+  "name": "finance-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "小财本：记账 + A股指数MACD + 基金持仓 H5/PWA",
+  "dependencies": {
+    "echarts": "^5.5.1"
+  }
+}

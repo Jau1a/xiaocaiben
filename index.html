@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#3b5bdb">
+<title>小财本</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="app-title">小财本</div>
+  <div id="topbarRight">
+    <button class="topbtn" id="tbRefreshM">⟳ 行情</button>
+    <button class="topbtn" id="tbRefreshF" style="margin-left:6px">⟳ 估值</button>
+  </div>
+</header>
+<main>
+  <section id="page-home" class="page active">
+    <!-- 总仓位 -->
+    <div class="cards" id="fundSummary"></div>
+
+    <!-- 大盘信号 -->
+    <h4 class="sec-title">大盘信号</h4>
+    <div class="sig-wrap" id="advMarket"><p class="empty">加载中…</p></div>
+
+    <!-- 指数行情 -->
+    <h4 class="sec-title">A股指数 · MACD</h4>
+    <div class="chips" id="indexChips"></div>
+    <div class="quote-card" id="quoteCard"></div>
+    <div id="klineChart" class="chart-lg"></div>
+
+    <!-- 基金持仓 -->
+    <h4 class="sec-title">基金持仓</h4>
+    <div class="fund-toolbar">
+      <input id="fundCodeInput" type="text" placeholder="输入6位基金代码，如 011840" inputmode="numeric" maxlength="6">
+      <button id="fundAddBtn">添加</button>
+    </div>
+    <div class="list" id="fundList"></div>
+    <div id="fundChart" class="chart-lg"></div>
+
+    <!-- 基金信号与建议 -->
+    <h4 class="sec-title">基金信号与建议</h4>
+    <div id="advFunds"></div>
+    <div class="card-note">以上信号与建议由规则引擎按公开行情自动生成，仅供参考，不构成投资建议。</div>
+  </section>
+</main>
+<div id="modal" class="modal hidden"><div class="modal-box" id="modalBox"></div></div>
+<div id="toast" class="toast hidden"></div>
+<script src="vendor/echarts.min.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/market.js"></script>
+<script src="js/fund.js"></script>
+<script src="js/advice.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
